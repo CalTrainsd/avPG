@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <title>Hello World</title>
+<!--   
+<script type="text/javascript" src="phonegap.js"></script>
+-->
+</head>
+<script>	
+
+function findFile( src ) {
+    if (device.platform == 'Android') {
+      src = '/android_asset/www/' + src;
+    }
+	return src ;
+}
+
+function playMP3( mp3 ) {
+	var media ;
+	mp3 = findFile( mp3 ) ;
+    media = new Media( src );
+    media.play() ;
+}
+
+</script>
+<body>
+
+<button onclick="playMP3( 'hooray.mp3');">Hooray PG media player</button>
+<br>
+<button onclick="playMP3( 'jeopardy.mp3');">Jeopardy PG media player</button>
+<br>
+
+<video id="mp4" src="workout.mp4" ></video>
+<br>
+<button onclick="document.getElementById('mp4').play();">Workout Play video-tag no type</button>
+<br>
+
+<video id="mp41" src="workout.mp4" type='video/mpeg' ></video>
+<br>
+<button onclick="document.getElementById('mp41').play();">Workout Play video-tag with type</button>
+<br>
+
+
+<audio id="mp3" src="hooray.mp3"></audio>
+<br>
+<button onclick="document.getElementById('mp3').play();">Hooray Play audio-tag no type</button>
+<br>
+
+<audio id="mp31" src="hooray.mp3" type='audio/mpeg' ></audio>
+<br>
+<button onclick="document.getElementById('mp31').play();">Hooray Play audio-tag with type audio</button>
+<br>
+
+<video id="mp32" src="hooray.mp3"></video>
+<br>
+<button onclick="document.getElementById('mp32').play();">Hooray Play video-tag no type</button>
+<br>
+<video id="mp33" src="hooray.mp3" type="audio/mpeg" ></video>
+<br>
+<button onclick="document.getElementById('mp33').play();">Hooray Play video-tag with audio type</button>
+
+
+</body>
+</html>
